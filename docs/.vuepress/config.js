@@ -1,4 +1,7 @@
 module.exports = {
+    markdown: {
+        lineNumbers: true
+    },
     title: 'fobgochod',
     description: 'fobgochod的笔记',
     head: [

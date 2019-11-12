@@ -9,7 +9,7 @@
  2. 在创作中心设置你喜爱的代码高亮样式，Markdown **将代码片显示选择的高亮样式** 进行展示；
  3. 增加了 **图片拖拽** 功能，你可以将本地的图片直接拖拽到编辑区域直接展示；
  4. 全新的 **KaTeX数学公式** 语法；
- 5. 增加了支持**甘特图的mermaid语法[^1]** 功能；
+ 5. 增加了支持**甘特图的mermaid语法** 功能；
  6. 增加了 **多屏幕编辑** Markdown文章功能；
  7. 增加了 **焦点写作模式、预览模式、简洁写作模式、左右区域同步滚轮设置** 等功能，功能按钮位于编辑区域与预览区域中间；
  8. 增加了 **检查列表** 功能。
@@ -33,54 +33,87 @@
 
 ## 合理的创建标题，有助于目录的生成
 
-直接输入1次<kbd>#</kbd>，并按下<kbd>space</kbd>后，将生成1级标题。
-输入2次<kbd>#</kbd>，并按下<kbd>space</kbd>后，将生成2级标题。
-以此类推，我们支持6级标题。有助于使用`TOC`语法后生成一个完美的目录。
+直接输入1次<kbd>#</kbd>，并按下<kbd>space</kbd>后，将生成1级标题。  
+输入2次<kbd>##</kbd>，并按下<kbd>space</kbd>后，将生成2级标题。  
+以此类推，我们支持6级标题。有助于使用`TOC`语法后生成一个完美的目录。  
 
 ## 如何改变文本的样式
 
-*强调文本* _强调文本_
+#### 输入
 
-**加粗文本** __加粗文本__
-
-==标记文本==
-
-~~删除文本~~
-
+```
+`斜体:` *强调文本* _强调文本_
+`加粗:` **加粗文本** __加粗文本__
+`加粗+斜体:` ***加粗文本*** ___加粗文本___
+`删除线:` ~~删除文本~~
 > 引用文本
+>> 引用文本
+>>> 引用文本
+`分割线:` 三个或者三个以上的 - 或者 * 都可以，例如：
+---
+----
+***
+****
+`下标:` H<sub>2</sub>O is是液体。
+`上标:` 2<sup>10</sup> 运算结果是 1024.
+```
 
-H~2~O is是液体。
+#### 输出
 
-2^10^ 运算结果是 1024.
+`斜体:` *强调文本* _强调文本_
+
+`加粗:` **加粗文本** __加粗文本__
+
+`加粗+斜体:` ***加粗文本*** ___加粗文本___
+
+`删除线:` ~~删除文本~~
+ 
+> 引用文本
+>> 引用文本
+>>> 引用文本
+
+`分割线:` 三个或者三个以上的 - 或者 * 都可以，例如：
+
+---
+----
+***
+****
+
+`下标:` H<sub>2</sub>O is是液体。
+
+`上标:` 2<sup>10</sup> 运算结果是 1024.
+
 
 ## 插入链接与图片
 
-链接: [link](https://mp.csdn.net).
+链接: [GitHub](https://github.com/).
 
 图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw)
 
-带尺寸的图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw =30x30)
-
-居中的图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center)
-
-居中并且带尺寸的图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center =30x30)
-
-当然，我们为了让用户更加便捷，我们增加了图片拖拽功能。
+图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw "猴子")
 
 ## 如何插入一段漂亮的代码片
 
 去[博客设置](https://mp.csdn.net/configure)页面，选择一款你喜欢的代码片高亮样式，下面展示同样高亮的 `代码片`.
-```javascript
-// An highlighted block
-var foo = 'bar';
+```java 
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
 ``` 
 
 ## 生成一个适合你的列表
 
-- 项目
-  - 项目
-    - 项目
+**无序列表**：只需要在文字前面加上- 、*、+就可以了，它们效果是一样的，例如：
+- 项目1
+  - 项目11
+    - 项目111
+* 项目1
+* 项目2
+* 项目3
 
+**有序列表**：只需在数字后面加上英文句点即可，这里面的数字不影响排序，例如：
 1. 项目1
 2. 项目2
 3. 项目3
@@ -89,6 +122,7 @@ var foo = 'bar';
 - [x] 完成任务
 
 ## 创建一个表格
+
 一个简单的表格是这么创建的：
 项目     | Value
 -------- | -----
@@ -97,6 +131,7 @@ var foo = 'bar';
 导管  | $1
 
 ### 设定内容居中、居左、居右
+
 使用`:---------:`居中
 使用`:----------`居左
 使用`----------:`居右
@@ -105,6 +140,7 @@ var foo = 'bar';
 | 第一列文本居中 | 第二列文本居右  | 第三列文本居左 | 
 
 ### SmartyPants
+
 SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例如：
 |    TYPE   |ASCII                          |HTML                         
 |----------------|-------------------------------|-----------------------------|
@@ -112,107 +148,151 @@ SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例
 |Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 
-## 创建一个自定义列表
-Markdown
-:  Text-to-HTML conversion tool
 
-Authors
-:  John
-:  Luke
+# Markdown 拓展
 
-## 如何创建一个注脚
+## 链接
 
-一个具有注脚的文本。[^2]
+假设你现在在 `guide/README.md` 中：
 
-##  注释也是必不可少的
+[Home](/) <!-- 跳转到根部的 README.md --> 
+::: tip 说明
+`[跳转](/)`  
+跳转到根部的 index.html
+:::
+ 
+[guide](/zh/guide/) 
+::: tip 说明
+`[跳转](/zh/guide/)`  
+跳转到 /zh/guide 文件夹的 index.html
+:::
 
-Markdown将文本转换为 HTML。
+[guide heading](./#heading) 
+::: tip 说明
+`[跳转](./#heading)`  
+跳转到 /zh/guide/index.html 文件夹的 index.html
+:::
 
-*[HTML]:   超文本标记语言
+[content - database - MariaDB](../content/database/MariaDB.md) 
+::: tip 说明
+`[跳转](../zh/content/database/MariaDB.md)`  
+跳转到 /zh/content/database/index.html 文件夹的 index.html  
+具体文件可以使用 .md 结尾（推荐）
+:::
+  
+[content - database - MariaDB](../content/database/MariaDB.html) 
+::: tip 说明
+`[跳转](../content/database/MariaDB.html)`  
+跳转到 /zh/content/database/index.html 文件夹的 index.html
+:::
 
-## KaTeX数学公式
+## 表格
 
-您可以使用渲染LaTeX数学表达式 [KaTeX](https://khan.github.io/KaTeX/):
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
-Gamma公式展示 $\Gamma(n) = (n-1)!\quad\forall
-n\in\mathbb N$ 是通过欧拉积分
+## Emoji
 
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
+:tada: :100: 
 
-> 你可以找到更多关于的信息 **LaTeX** 数学表达式[here][1].
+## 目录
 
-## 新的甘特图功能，丰富你的文章
+[[toc]]
 
-```mermaid
-gantt
-        dateFormat  YYYY-MM-DD
-        title Adding GANTT diagram functionality to mermaid
-        section 现有任务
-        已完成               :done,    des1, 2014-01-06,2014-01-08
-        进行中               :active,  des2, 2014-01-09, 3d
-        计划一               :         des3, after des2, 5d
-        计划二               :         des4, after des3, 5d
+## 自定义容器
+
+#### 输入
+
 ```
-- 关于 **甘特图** 语法，参考 [这儿][^3],
+::: tip
+This is a tip
+:::
 
-## UML 图表
+::: warning
+This is a warning
+:::
 
-可以使用UML图表进行渲染。 [Mermaid](https://mermaidjs.github.io/). 例如下面产生的一个序列图：
+::: danger
+This is a dangerous warning
+:::
 
-```mermaid
-sequenceDiagram
-张三 ->> 李四: 你好！李四, 最近怎么样?
-李四-->>王五: 你最近怎么样，王五？
-李四--x 张三: 我很好，谢谢!
-李四-x 王五: 我很好，谢谢!
-Note right of 王五: 李四想了很长时间, 文字太长了<br/>不适合放在一行.
-
-李四-->>张三: 打量着王五...
-张三->>王五: 很好... 王五, 你怎么样?
-```
-
-这将产生一个流程图。:
-
-```mermaid
-graph LR
-A[长方形] -- 链接 --> B((圆))
-A --> C(圆角长方形)
-B --> D{菱形}
-C --> D
-```
-
-- 关于 **Mermaid** 语法，参考 [这儿][^4],
-
-## FLowchart流程图
-
-我们依旧会支持flowchart的流程图：
-```mermaid
-flowchat
-st=>start: 开始
-e=>end: 结束
-op=>operation: 我的操作
-cond=>condition: 确认？
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
+你也可以自定义块中的标题：
+::: danger STOP
+Danger zone, do not proceed
+:::
 ```
 
-- 关于 **Flowchart流程图** 语法，参考 [这儿][^5].
+#### 输出
 
-## 导出与导入
+::: tip
+This is a tip
+:::
 
-###  导出
-如果你想尝试使用此编辑器, 你可以在此篇文章任意编辑。当你完成了一篇文章的写作, 在上方工具栏找到 **文章导出** ，生成一个.md文件或者.html文件进行本地保存。
+::: warning
+This is a warning
+:::
 
-### 导入
-如果你想加载一篇你写过的.md文件，在上方工具栏可以选择导入功能进行对应扩展名的文件导入，
-继续你的创作。
+::: danger
+This is a dangerous warning
+:::
 
- [^1]: [mermaid语法说明](https://mermaidjs.github.io/)
- [^2]: 注脚的解释
- [^3]: https://mermaidjs.github.io/
- [^4]: https://mermaidjs.github.io/
- [^5]: http://adrai.github.io/flowchart.js/
+你也可以自定义块中的标题：
+::: danger STOP
+Danger zone, do not proceed
+:::
+
+## Badge <Badge text="beta" type="warn"/> <Badge text="0.10.1+"/> <Badge text="默认主题"/>
+
+- Props:
+  - `text` - string
+  - `type` - string, 可选值： `"tip"|"warn"|"error"`，默认值是： `"tip"`
+  - `vertical` - string, 可选值： `"top"|"middle"`，默认值是： `"top"`
+
+#### 输入
+
+```
+三千世界<Badge text="三"/>
+三千世界<Badge text="千" type="warn"/>
+三千世界<Badge text="世" type="error"/> 
+三千世界<Badge text="界" type="tip" vertical="middle"/>
+```
+
+#### 输出
+
+三千世界<Badge text="三"/>  
+三千世界<Badge text="千" type="warn"/>  
+三千世界<Badge text="世" type="error"/>   
+三千世界<Badge text="界" type="tip" vertical="middle"/>
+
+## 代码
+
+```java 
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+```
+
+代码块中的行高亮
+```java {3}
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+```
+
+## 行号
+
+你可以通过配置来为每个代码块显示行号：
+```javascript 
+module.exports = {
+  markdown: {
+    lineNumbers: true
+  }
+}
+```
