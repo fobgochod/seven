@@ -2,42 +2,26 @@
 
 你好！ 这是你第一次使用 **Markdown编辑器** 所展示的欢迎页。如果你想学习如何使用Markdown编辑器, 可以仔细阅读这篇文章，了解一下Markdown的基本语法知识。
 
-## 新的改变
+## 标题
 
-我们对Markdown编辑器进行了一些功能拓展与语法支持，除了标准的Markdown编辑器功能，我们增加了如下几点新功能，帮助你用它写博客：
- 1. **全新的界面设计** ，将会带来全新的写作体验；
- 2. 在创作中心设置你喜爱的代码高亮样式，Markdown **将代码片显示选择的高亮样式** 进行展示；
- 3. 增加了 **图片拖拽** 功能，你可以将本地的图片直接拖拽到编辑区域直接展示；
- 4. 全新的 **KaTeX数学公式** 语法；
- 5. 增加了支持**甘特图的mermaid语法** 功能；
- 6. 增加了 **多屏幕编辑** Markdown文章功能；
- 7. 增加了 **焦点写作模式、预览模式、简洁写作模式、左右区域同步滚轮设置** 等功能，功能按钮位于编辑区域与预览区域中间；
- 8. 增加了 **检查列表** 功能。
+#### 输入
 
+```
+# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+```
 
-## 功能快捷键
+#### 输出
 
-撤销：<kbd>Ctrl/Command</kbd> + <kbd>Z</kbd>  
-重做：<kbd>Ctrl/Command</kbd> + <kbd>Y</kbd>  
-加粗：<kbd>Ctrl/Command</kbd> + <kbd>B</kbd>  
-斜体：<kbd>Ctrl/Command</kbd> + <kbd>I</kbd>  
-标题：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>  
-无序列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd>  
-有序列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>  
-检查列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd>  
-插入代码：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd>  
-插入链接：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>  
-插入图片：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>  
-查找：<kbd>Ctrl/Command</kbd> + <kbd>F</kbd>  
-替换：<kbd>Ctrl/Command</kbd> + <kbd>G</kbd>
-
-## 合理的创建标题，有助于目录的生成
-
-直接输入1次<kbd>#</kbd>，并按下<kbd>space</kbd>后，将生成1级标题。  
+输入1次<kbd>#</kbd>，并按下<kbd>space</kbd>后，将生成1级标题。  
 输入2次<kbd>##</kbd>，并按下<kbd>space</kbd>后，将生成2级标题。  
-以此类推，我们支持6级标题。有助于使用`TOC`语法后生成一个完美的目录。  
+以此类推，我们支持6级标题。有助于使用`TOC`语法后生成一个完美的目录。
 
-## 如何改变文本的样式
+## 文本样式
 
 #### 输入
 
@@ -56,6 +40,7 @@
 ****
 `下标:` H<sub>2</sub>O is是液体。
 `上标:` 2<sup>10</sup> 运算结果是 1024.
+`键盘文本:` <kbd>Ctrl+Shift</kbd>
 ```
 
 #### 输出
@@ -83,8 +68,21 @@
 
 `上标:` 2<sup>10</sup> 运算结果是 1024.
 
+`键盘文本:` <kbd>Ctrl+Shift</kbd>
 
-## 插入链接与图片
+## 链接与图片
+
+#### 输入
+
+```
+链接: [GitHub](https://github.com/).
+
+图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw)
+
+图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw "猴子")
+```
+
+#### 输出
 
 链接: [GitHub](https://github.com/).
 
@@ -92,9 +90,24 @@
 
 图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw "猴子")
 
-## 如何插入一段漂亮的代码片
+## 代码片
 
 去[博客设置](https://mp.csdn.net/configure)页面，选择一款你喜欢的代码片高亮样式，下面展示同样高亮的 `代码片`.
+
+#### 输入
+
+```
+    ```java 
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello World");
+        }
+    }
+    ```
+```
+
+#### 输出
+
 ```java 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -103,9 +116,23 @@ public class HelloWorld {
 }
 ``` 
 
-## 生成一个适合你的列表
+## 列表
 
 **无序列表**：只需要在文字前面加上- 、*、+就可以了，它们效果是一样的，例如：
+
+#### 输入
+
+```
+- 项目1
+  - 项目11
+    - 项目111
+* 项目1
+* 项目2
+* 项目3
+```
+
+#### 输出
+
 - 项目1
   - 项目11
     - 项目111
@@ -114,6 +141,20 @@ public class HelloWorld {
 * 项目3
 
 **有序列表**：只需在数字后面加上英文句点即可，这里面的数字不影响排序，例如：
+
+#### 输入
+
+```
+1. 项目1
+2. 项目2
+3. 项目3
+
+- [ ] 计划任务
+- [x] 完成任务
+```
+
+#### 输出
+
 1. 项目1
 2. 项目2
 3. 项目3
@@ -121,7 +162,7 @@ public class HelloWorld {
 - [ ] 计划任务
 - [x] 完成任务
 
-## 创建一个表格
+## 表格
 
 一个简单的表格是这么创建的：
 项目     | Value
@@ -149,7 +190,7 @@ SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 
 
-# Markdown 拓展
+# Markdown 拓展(Vue)
 
 ## 链接
 
@@ -188,6 +229,18 @@ SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例
 
 ## 表格
 
+#### 输入
+
+```
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+```
+
+#### 输出
+
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
@@ -199,6 +252,14 @@ SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例
 :tada: :100: 
 
 ## 目录
+
+#### 输入
+
+```
+[[toc]]
+```
+
+#### 输出
 
 [[toc]]
 
@@ -269,6 +330,20 @@ Danger zone, do not proceed
 
 ## 代码
 
+#### 输入
+
+```
+    ```java
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello World");
+        }
+    }
+    ```
+```
+
+#### 输出
+
 ```java 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -277,7 +352,22 @@ public class HelloWorld {
 }
 ```
 
-代码块中的行高亮
+#### 代码块中的行高亮
+
+#### 输入
+
+```
+    ```java {3}
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello World");
+        }
+    }
+    ```
+```
+
+#### 输出
+
 ```java {3}
 public class HelloWorld {
     public static void main(String[] args) {
