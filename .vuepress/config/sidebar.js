@@ -7,7 +7,6 @@ module.exports = [
     {
         title: '附录',
         collapsable: false,
-        path: '/appendix/',
         children: [
             '/appendix/markdown',
         ]

@@ -14,7 +14,8 @@ module.exports = [
                 text: '其他', items: [
                     {text: '软件架构探索', link: 'https://icyfenix.cn'},
                     {text: 'Java 全栈知识体系', link: 'https://www.pdai.tech'},
-                    {text: 'VuePress', link: 'https://vuepress.vuejs.org/zh'}
+                    {text: 'VuePress', link: 'https://vuepress.vuejs.org/zh'},
+                    {text: 'Vssue', link: 'https://vssue.js.org/zh'}
                 ]
             }
         ]

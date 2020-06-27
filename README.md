@@ -1,10 +1,10 @@
 ---
 home: true
-heroImage: /images/saber.jpg
-heroText: fobgochod
+heroImage: /images/logo.png
+heroText: Seven
 tagline: 知道+做到=得到
 actionText: 快速上手 →
-actionLink: /zh/guide/
+actionLink: /summary
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
