@@ -17,7 +17,7 @@
   "author": "fobgochod@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "@vssue/api-gitlab-v4": "^1.4.0",
+    "@vssue/api-github-v4": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "@vuepress/plugin-back-to-top": "^1.5.2",
     "markdown-it-task-lists": "^2.1.1",

@@ -7,7 +7,7 @@ module.exports = {
     ],
     locales: {
         "/": {
-            lang: 'zh-CN'
+            lang: 'zh-CN',
         }
     },
     themeConfig: {
