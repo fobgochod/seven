@@ -2,6 +2,25 @@ module.exports = {
     markdown: {
         lineNumbers: true
     },
+    plugins: [
+        ["nuggets-style-copy", {
+            copyText: '复制代码',
+            tip: {
+                time: '3000',
+                content: '复制成功',
+                title: 'Tips'
+            }
+        }],
+        ['@vssue/vuepress-plugin-vssue', {
+            platform: 'github-v4',
+            owner: 'fobgochod',
+            repo: 'fobgochod.github.io',
+            clientId: '86b0873df13688df1cc2',
+            clientSecret: '0be83a1ff2a594501e217b9b991de8917998e746',
+            locale: 'zh-CN',
+            autoCreateIssue: true
+        }]
+    ],
     title: 'fobgochod',
     description: 'fobgochod的笔记',
     head: [

@@ -7,12 +7,12 @@ before_install:
 install:
   - npm install
 script:
-  - npm run build
+  - npm run docs:build
 deploy:
   - provider: pages
     skip_cleanup: true
     local_dir: docs/.vuepress/dist
-    github_token: $GITHUB_TOKEN
+    github_token: $gh_token
     keep_history: true
     target-branch: gh-pages
     on:
