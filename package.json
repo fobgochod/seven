@@ -1,16 +1,20 @@
 {
-  "name": "fobgochod",
+  "name": "seven",
   "version": "1.0.0",
-  "description": "",
+  "description": "Note taking",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "dev": "vuepress dev .",
+    "build": "vuepress build .",
     "deploy": "bash deploy.sh"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fobgochod/seven.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "fobgochod@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@vssue/api-gitlab-v4": "^1.4.0",

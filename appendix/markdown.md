@@ -214,14 +214,14 @@ SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例
 跳转到 /zh/guide/index.html 文件夹的 index.html
 :::
 
-[content - database - MariaDB](../content/database/MariaDB.md) 
+[content - database - MariaDB](docs/contentnt/database/MariaDB.md) 
 ::: tip 说明
 `[跳转](../zh/content/database/MariaDB.md)`  
 跳转到 /zh/content/database/index.html 文件夹的 index.html  
 具体文件可以使用 .md 结尾（推荐）
 :::
   
-[content - database - MariaDB](../content/database/MariaDB.html) 
+[content - database - MariaDB](frontend/database/MariaDB.html) 
 ::: tip 说明
 `[跳转](../content/database/MariaDB.html)`  
 跳转到 /zh/content/database/index.html 文件夹的 index.html
