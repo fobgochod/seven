@@ -2,7 +2,7 @@
 home: true
 heroImage: /images/logo.png
 heroText: Seven
-tagline: 知道+做到=得到
+tagline: 6+1=7
 actionText: 快速上手 →
 actionLink: /summary
 features:

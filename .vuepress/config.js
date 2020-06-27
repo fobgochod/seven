@@ -26,6 +26,8 @@ module.exports = {
     },
     markdown: {
         lineNumbers: true,
+        anchor: {permalink: false},
+        toc: {includeLevel: [2, 3]},
         plugins: ['task-lists']
     },
     plugins: [

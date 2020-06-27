@@ -171,7 +171,7 @@ public class HelloWorld {
 手机  | $12
 导管  | $1
 
-### 设定内容居中、居左、居右
+***设定内容居中、居左、居右***
 
 使用`:---------:`居中
 使用`:----------`居左
@@ -180,19 +180,10 @@ public class HelloWorld {
 |:-----------:| -------------:|:-------------|
 | 第一列文本居中 | 第二列文本居右  | 第三列文本居左 | 
 
-### SmartyPants
 
-SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例如：
-|    TYPE   |ASCII                          |HTML                         
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
+## Markdown 拓展(Vue)
 
-
-# Markdown 拓展(Vue)
-
-## 链接
+### 链接
 
 假设你现在在 `guide/README.md` 中：
 
@@ -214,20 +205,20 @@ SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例
 跳转到 /zh/guide/index.html 文件夹的 index.html
 :::
 
-[content - database - MariaDB](docs/contentnt/database/MariaDB.md) 
+[content - database - MariaDB](../content/database/MariaDB.md) 
 ::: tip 说明
 `[跳转](../zh/content/database/MariaDB.md)`  
 跳转到 /zh/content/database/index.html 文件夹的 index.html  
 具体文件可以使用 .md 结尾（推荐）
 :::
   
-[content - database - MariaDB](frontend/database/MariaDB.html) 
+[content - database - MariaDB](../content/database/MariaDB.html) 
 ::: tip 说明
 `[跳转](../content/database/MariaDB.html)`  
 跳转到 /zh/content/database/index.html 文件夹的 index.html
 :::
 
-## 表格
+### 表格
 
 #### 输入
 
@@ -247,11 +238,13 @@ SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
-## Emoji
+### Emoji
 
-:tada: :100: 
+:tada: :100:
 
-## 目录
+你可以在[这个列表](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json)找到所有可用的 Emoji。
+
+### 目录
 
 #### 输入
 
@@ -263,7 +256,7 @@ SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例
 
 [[toc]]
 
-## 自定义容器
+### 自定义容器
 
 #### 输入
 
@@ -305,7 +298,7 @@ This is a dangerous warning
 Danger zone, do not proceed
 :::
 
-## Badge <Badge text="beta" type="warn"/> <Badge text="0.10.1+"/> <Badge text="默认主题"/>
+### Badge <Badge text="beta" type="warn"/> <Badge text="0.10.1+"/> <Badge text="默认主题"/>
 
 - Props:
   - `text` - string
@@ -328,7 +321,11 @@ Danger zone, do not proceed
 三千世界<Badge text="世" type="error"/>   
 三千世界<Badge text="界" type="tip" vertical="middle"/>
 
-## 代码
+### 代码
+
+VuePress 使用了 Prism 来为 markdown 中的代码块实现语法高亮。Prism 支持大量的编程语言，你需要做的只是在代码块的开始倒勾中附加一个有效的语言别名：
+
+在 Prism 的网站上查看[合法的语言列表](https://prismjs.com/#languages-list)。
 
 #### 输入
 
@@ -376,7 +373,7 @@ public class HelloWorld {
 }
 ```
 
-## 行号
+### 行号
 
 你可以通过配置来为每个代码块显示行号：
 ```javascript 
