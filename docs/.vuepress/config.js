@@ -21,6 +21,7 @@ module.exports = {
             autoCreateIssue: true
         }]
     ],
+    base: '/seven/',
     title: 'fobgochod',
     description: 'fobgochod的笔记',
     head: [
