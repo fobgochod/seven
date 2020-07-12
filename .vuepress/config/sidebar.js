@@ -7,6 +7,7 @@ module.exports = [
     {
         title: '前言',
         collapsable: false,
+        sidebarDepth: 2,
         children: [
             '/introduction/about-me',
             '/introduction/about-the-project',
@@ -15,18 +16,23 @@ module.exports = [
     },
     {
         title: '7月8月',
-        collapsable: false,
         path: '/mashibing/',
-        children: []
+        collapsable: false,
+        sidebarDepth: 2,
+        children: [
+            "/mashibing/JUC"
+        ]
     },
     {
         title: 'DSweet',
         collapsable: false,
+        sidebarDepth: 2,
         children: []
     },
     {
         title: '附录',
         collapsable: false,
+        sidebarDepth: 2,
         children: [
             '/appendix/markdown',
         ]
