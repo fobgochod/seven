@@ -20,7 +20,32 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            "/mashibing/JUC"
+            {
+                title: 'JUC',
+                path: '/mashibing/juc/',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/mashibing/juc/thread1',
+                    '/mashibing/juc/thread2',
+                    '/mashibing/juc/thread3',
+                    '/mashibing/juc/thread4',
+                    '/mashibing/juc/thread5',
+                    '/mashibing/juc/thread6',
+                    '/mashibing/juc/thread7',
+                    '/mashibing/juc/thread8',
+                    '/mashibing/juc/thread9',
+                ]
+            },
+            {
+                title: 'MySQL',
+                path: '/mashibing/mysql/',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/mashibing/mysql/mysql1'
+                ]
+            }
         ]
     },
     {
