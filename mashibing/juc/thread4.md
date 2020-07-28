@@ -164,5 +164,5 @@ public abstract class AbstractQueuedSynchronizer{
 ```
 
 
-- ReentrantLock state 0、1 代表加锁 解锁
+- ReentrantLock state 0、1、2... 代表 解锁、加锁、锁重入... 
 - CountDownLatch
