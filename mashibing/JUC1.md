@@ -1,25 +1,5 @@
 # JUC
- 
-## 线程池可用的各种高并发容器详解：CopyOnWriteList，BlockingQueue等
 
-- 容器 - Vector - Hashtable
-- CopyOnWriteList
-- ConcurrentHashMap
-- ConcurrentSkipListMap
-- BlockingQueue
-- 目标 为ThreadPool做准备
-
-Vector和Hashtable自带锁，基本不用
-
-Hashtable 方法上加锁 -> @since 1.0
-HashMap 无锁 -> @since 1.2
-Collections.synchronizedMap (SynchronizedMap) 锁力度变小 -> @since 1.2
-ConcurrentHashMap -> @since 1.5
-
-- Vector -> Queue 
-- Queue List区别
-- Queue添加了对多线程友好的API   offer peek poll
-- BlockingQueue put take 阻塞
 
 
 ## 详解线程池：自定义线程池，JDK自带线程池，ForkJoin，源码解析等(一） 

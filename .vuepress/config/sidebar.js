@@ -38,12 +38,24 @@ module.exports = [
                 ]
             },
             {
+                title: 'JVM',
+                path: '/mashibing/jvm/',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/mashibing/jvm/jvm1',
+                    '/mashibing/jvm/jvm2',
+                    '/mashibing/jvm/jvm3'
+                ]
+            },
+            {
                 title: 'MySQL',
                 path: '/mashibing/mysql/',
                 collapsable: false,
                 sidebarDepth: 2,
                 children: [
-                    '/mashibing/mysql/mysql1'
+                    '/mashibing/mysql/mysql1',
+                    '/mashibing/mysql/mysql2'
                 ]
             }
         ]
