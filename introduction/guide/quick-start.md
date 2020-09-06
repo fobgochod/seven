@@ -157,6 +157,8 @@ server {
 ```sh
 systemctl stop nginx.service
 systemctl start nginx.service
+# 重启
+systemctl restart nginx.service
 ```
 
 ## 访问

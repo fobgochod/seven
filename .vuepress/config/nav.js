@@ -11,11 +11,18 @@ module.exports = [
                 ]
             },
             {
-                text: '其他', items: [
+                text: '模版', items: [
+                    {text: 'Vssue', link: 'https://vssue.js.org/zh'},
                     {text: '软件架构探索', link: 'https://icyfenix.cn'},
-                    {text: 'Java 全栈知识体系', link: 'https://www.pdai.tech'},
+                    {text: 'MyBatis-Plus', link: 'https://baomidou.com'},
+                    {text: 'Java 全栈知识体系', link: 'https://www.pdai.tech'}
+                ]
+            },
+            {
+                text: '其他', items: [
+                    {text: 'Vue.js', link: 'https://cn.vuejs.org'},
                     {text: 'VuePress', link: 'https://vuepress.vuejs.org/zh'},
-                    {text: 'Vssue', link: 'https://vssue.js.org/zh'}
+                    {text: 'Awesome VuePress', link: 'https://github.com/vuepressjs/awesome-vuepress'},
                 ]
             }
         ]

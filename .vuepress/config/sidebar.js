@@ -15,9 +15,21 @@ module.exports = [
         ]
     },
     {
-        title: '7月8月',
-        path: '/mashibing/',
+        title: '前端',
         collapsable: false,
+        sidebarDepth: 2,
+        children: []
+    },
+    {
+        title: '后端',
+        collapsable: false,
+        sidebarDepth: 2,
+        children: []
+    },
+    {
+        title: '学习中 📚',
+        path: '/mashibing/',
+        collapsable: true,
         sidebarDepth: 2,
         children: [
             {
@@ -54,17 +66,23 @@ module.exports = [
                 collapsable: false,
                 sidebarDepth: 2,
                 children: [
+                    '/mashibing/mysql/data',
                     '/mashibing/mysql/mysql1',
-                    '/mashibing/mysql/mysql2'
+                    '/mashibing/mysql/mysql2',
+                    '/mashibing/mysql/mysql3',
+                    '/mashibing/mysql/mysql4'
                 ]
             }
         ]
     },
     {
-        title: 'DSweet',
+        title: '读书笔记',
         collapsable: false,
         sidebarDepth: 2,
-        children: []
+        children: [
+            '/book/On-Java-8',
+            '/book/Understanding-the-JVM',
+        ]
     },
     {
         title: '附录',
