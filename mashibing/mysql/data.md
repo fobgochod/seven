@@ -8,10 +8,14 @@
 ## Oracle Scott
 
 ```sql
-DROP TABLE IF EXISTS emp;
-DROP TABLE IF EXISTS dept;
-DROP TABLE IF EXISTS salgrade;
-DROP TABLE IF EXISTS bonus;
+DROP SCHEMA IF EXISTS scott;
+CREATE SCHEMA scott;
+USE scott;
+
+-- DROP TABLE IF EXISTS emp;
+-- DROP TABLE IF EXISTS dept;
+-- DROP TABLE IF EXISTS salgrade;
+-- DROP TABLE IF EXISTS bonus;
 
 CREATE TABLE IF NOT EXISTS dept (
     deptno INT(4) NOT NULL,

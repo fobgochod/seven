@@ -19,7 +19,14 @@ module.exports = [
                 ]
             },
             {
-                text: '其他', items: [
+                text: '阅读', items: [
+                    {text: 'OnJava8', link: 'https://lingcoder.gitee.io/onjava8/#/sidebar'},
+                    {text: 'MyBatis', link: 'https://mybatis.org/mybatis-3/zh/index.html'},
+                    {text: '软件架构探索：The Fenix Project', link: 'https://icyfenix.cn'},
+                ]
+            },
+            {
+                text: 'Vue', items: [
                     {text: 'Vue.js', link: 'https://cn.vuejs.org'},
                     {text: 'VuePress', link: 'https://vuepress.vuejs.org/zh'},
                     {text: 'Awesome VuePress', link: 'https://github.com/vuepressjs/awesome-vuepress'},

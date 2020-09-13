@@ -19,15 +19,8 @@ footer: 版权所有   皖ICP备18020875号
 ## Q&A
 
 [Google一下](https://www.google.com) | [百度一下](https://www.baidu.com) | [Stack Overflow](https://stackoverflow.com) |
-
 [Google翻译](https://translate.google.cn) | [百度翻译](https://fanyi.baidu.com) | [有道翻译](http://fanyi.youdao.com) | 
 
-
-## 在线阅读
-
-- [软件架构探索：The Fenix Project](https://icyfenix.cn)
-- [OnJava8](https://lingcoder.gitee.io/onjava8/#/sidebar)
-- [MyBatis](https://mybatis.org/mybatis-3/index.html)
-
+---
 
 <Vssue />

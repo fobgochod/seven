@@ -18,13 +18,32 @@ module.exports = [
         title: '前端',
         collapsable: false,
         sidebarDepth: 2,
-        children: []
+        children: [
+            '/frontend/npm',
+            '/frontend/yarn',
+            '/frontend/vuepress',
+            '/frontend/gitbook',
+        ]
     },
     {
         title: '后端',
         collapsable: false,
         sidebarDepth: 2,
-        children: []
+        children: [
+            '/backend/redis',
+            '/backend/nginx',
+        ]
+    },
+    {
+        title: 'OS',
+        collapsable: false,
+        sidebarDepth: 2,
+        children: [
+            '/os/linux',
+            '/os/windows',
+            '/os/docker',
+            '/os/nous'
+        ]
     },
     {
         title: '学习中 📚',
