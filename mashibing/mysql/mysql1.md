@@ -54,7 +54,7 @@ profile参考：
 >页面底部 -> DOCUMENTATION -> MySQL Reference Manual -> SQL Statements -> Database Administration Statements -> SHOW Statements -> SHOW PROFILE Statement
 [https://dev.mysql.com/doc/refman/8.0/en/show-profile.html](https://dev.mysql.com/doc/refman/8.0/en/show-profile.html)
 
-使用show profile查询剖析工具，可以指定具体的type
+### 使用show profile查询剖析工具
 ```sql
 # 查看
 SHOW VARIABLES LIKE 'profiling';
@@ -69,24 +69,45 @@ show profiles;
 show profile for query 1;
 ```
 
-#### type
-- all：显示所有性能信息
-  - show profile all for query n
-- block io：显示块io操作的次数
-  - show  profile block io for query n
-- context switches：显示上下文切换次数，被动和主动
-  - show profile context switches for query n
-- cpu：显示用户cpu时间、系统cpu时间
-  - show profile cpu for query n
-- IPC：显示发送和接受的消息数量
-  - show profile ipc for query n
-- Memory：暂未实现
-- page faults：显示页错误数量
-  - show profile page faults for query n
-- source：显示源码中的函数名称与位置
-  - show profile source for query n
-- swaps：显示swap的次数
-  - show profile swaps for query n
+### type说明
+1. all：显示所有性能信息
+    - show profile all for query n
+2. block io：显示块io操作的次数
+    - show  profile block io for query n
+3. context switches：显示上下文切换次数，被动和主动
+    - show profile context switches for query n
+4. cpu：显示用户cpu时间、系统cpu时间
+    - show profile cpu for query n
+5. IPC：显示发送和接受的消息数量
+    - show profile ipc for query n
+6. Memory：暂未实现
+7. page faults：显示页错误数量
+    - show profile page faults for query n
+8. source：显示源码中的函数名称与位置
+    - show profile source for query n
+9. swaps：显示swap的次数
+    - show profile swaps for query n
+
+### 通过Performance Schema来查询profiling相关信息
+
+>参考：[https://dev.mysql.com/doc/refman/5.7/en/performance-schema-query-profiling.html](https://dev.mysql.com/doc/refman/5.7/en/performance-schema-query-profiling.html)
+
+```sql
+SELECT * FROM performance_schema.setup_actors;
+UPDATE performance_schema.setup_actors SET ENABLED = 'NO', HISTORY = 'NO' WHERE HOST = '%' AND USER = '%';
+INSERT INTO performance_schema.setup_actors (HOST,USER,ROLE,ENABLED,HISTORY) VALUES('localhost','test_user','%','YES','YES');
+
+UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'YES' WHERE NAME LIKE '%statement/%';
+UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'YES' WHERE NAME LIKE '%stage/%';
+
+UPDATE performance_schema.setup_consumers SET ENABLED = 'YES' WHERE NAME LIKE '%events_statements_%';
+UPDATE performance_schema.setup_consumers SET ENABLED = 'YES' WHERE NAME LIKE '%events_stages_%';
+
+select * from scott.emp WHERE empno = 7900;
+
+SELECT EVENT_ID, TRUNCATE(TIMER_WAIT/1000000000000,6) as Duration, SQL_TEXT FROM performance_schema.events_statements_history_long WHERE SQL_TEXT like '%empno = 7900%';
+SELECT event_name AS Stage, TRUNCATE(TIMER_WAIT/1000000000000,6) AS Duration FROM performance_schema.events_stages_history_long WHERE NESTING_EVENT_ID=438808;
+```
 
 
 ## Performance Schema
