@@ -1,6 +1,11 @@
-# Redis
+# Commands
 
->参考：[http://doc.redisfans.com](http://doc.redisfans.com)
+## 文档
+
+- [http://doc.redisfans.com](http://doc.redisfans.com)
+- [https://redis.io/commands](https://redis.io/commands)
+- [https://redis.io/documentation](https://redis.io/documentation)
+
 
 #### 切换数据库
 ```sh

@@ -1,10 +1,5 @@
 module.exports = [
     {
-        title: '目录',
-        collapsable: false,
-        path: '/SUMMARY.md'
-    },
-    {
         title: '前言',
         collapsable: false,
         sidebarDepth: 2,
@@ -30,8 +25,33 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/zh/backend/redis',
             '/zh/backend/nginx',
+        ]
+    },
+    {
+        title: '数据库',
+        collapsable: false,
+        sidebarDepth: 2,
+        children: [
+            {
+                title: 'MariaDB',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/zh/database/mariadb/mariadb-install',
+                    '/zh/database/mariadb/mariadb-documentation',
+                ]
+            },
+            {
+                title: 'Redis',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/zh/database/redis/redis-install',
+                    '/zh/database/redis/redis-install-windows',
+                    '/zh/database/redis/redis-commands',
+                ]
+            }
         ]
     },
     {

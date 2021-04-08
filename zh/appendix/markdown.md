@@ -38,8 +38,8 @@
 ----
 ***
 ****
-`下标:` H<sub>2</sub>O is是液体。
-`上标:` 2<sup>10</sup> 运算结果是 1024.
+`下标:` H<sub>2</sub>O
+`上标:` 2<sup>10</sup>
 `键盘文本:` <kbd>Ctrl+Shift</kbd>
 ```
 
@@ -64,9 +64,9 @@
 ***
 ****
 
-`下标:` H<sub>2</sub>O is是液体。
+`下标:` H<sub>2</sub>O
 
-`上标:` 2<sup>10</sup> 运算结果是 1024.
+`上标:` 2<sup>10</sup>
 
 `键盘文本:` <kbd>Ctrl+Shift</kbd>
 
@@ -77,27 +77,25 @@
 ```
 链接: [GitHub](https://github.com/).
 
-图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw)
+图片: ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw)
 
-图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw "猴子")
+图片: ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw "猴子")
 ```
 
 #### 输出
 
 链接: [GitHub](https://github.com/).
 
-图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw)
+图片: ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw)
 
-图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw "猴子")
+图片: ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw "猴子")
 
 ## 代码片
-
-去[博客设置](https://mp.csdn.net/configure)页面，选择一款你喜欢的代码片高亮样式，下面展示同样高亮的 `代码片`.
 
 #### 输入
 
 ```
-    ```java 
+    ```java {3}
     public class HelloWorld {
         public static void main(String[] args) {
             System.out.println("Hello World");
@@ -108,7 +106,7 @@
 
 #### 输出
 
-```java 
+```java {3}
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello World");
@@ -118,29 +116,33 @@ public class HelloWorld {
 
 ## 列表
 
-**无序列表**：只需要在文字前面加上- 、*、+就可以了，它们效果是一样的，例如：
+### 无序列表
+
+>只需要在文字前面加上- 、*、+就可以了，它们效果是一样的，例如：
 
 #### 输入
 
 ```
 - 项目1
   - 项目11
-    - 项目111
-* 项目1
 * 项目2
+  + 项目21
 * 项目3
+* 项目4
 ```
 
 #### 输出
 
 - 项目1
   - 项目11
-    - 项目111
-* 项目1
 * 项目2
+  + 项目21
 * 项目3
+* 项目4
 
-**有序列表**：只需在数字后面加上英文句点即可，这里面的数字不影响排序，例如：
+### 有序列表
+
+>只需在数字后面加上英文句点即可，这里面的数字不影响排序，例如：
 
 #### 输入
 
@@ -185,37 +187,35 @@ public class HelloWorld {
 
 ### 链接
 
-假设你现在在 `guide/README.md` 中：
-
 [Home](/) <!-- 跳转到根部的 README.md --> 
 ::: tip 说明
 `[跳转](/)`  
-跳转到根部的 index.html
+跳转到根的 index.html
 :::
  
-[guide](/zh/guide/) 
+[SUMMARY](/summary) 
 ::: tip 说明
-`[跳转](/zh/guide/)`  
-跳转到 /zh/guide 文件夹的 index.html
+`[跳转](/summary)`  
+跳转到 /summary 文件夹的 index.html
 :::
 
-[guide heading](./#heading) 
+[appendix markdown](/zh/appendix/markdown) 
 ::: tip 说明
-`[跳转](./#heading)`  
-跳转到 /zh/guide/index.html 文件夹的 index.html
+`[跳转](/appendix/markdown)`  
+跳转到 /zh/appendix 文件夹的 markdown.html
 :::
 
-[content - database - MariaDB](../content/database/MariaDB.md) 
+[appendix markdown](/zh/appendix/markdown.md) 
 ::: tip 说明
-`[跳转](../zh/content/database/MariaDB.md)`  
-跳转到 /zh/content/database/index.html 文件夹的 index.html  
+`[跳转](/zh/appendix/markdown.md)`  
+跳转到 /zh/appendix 文件夹的 markdown.html 
 具体文件可以使用 .md 结尾（推荐）
 :::
   
-[content - database - MariaDB](../content/database/MariaDB.html) 
+[appendix markdown](/zh/appendix/markdown.html) 
 ::: tip 说明
-`[跳转](../content/database/MariaDB.html)`  
-跳转到 /zh/content/database/index.html 文件夹的 index.html
+`[跳转](/zh/appendix/markdown.html)`  
+跳转到 /zh/appendix 文件夹的 markdown.html
 :::
 
 ### 表格
@@ -330,30 +330,6 @@ VuePress 使用了 Prism 来为 markdown 中的代码块实现语法高亮。Pri
 #### 输入
 
 ```
-    ```java
-    public class HelloWorld {
-        public static void main(String[] args) {
-            System.out.println("Hello World");
-        }
-    }
-    ```
-```
-
-#### 输出
-
-```java 
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello World");
-    }
-}
-```
-
-#### 代码块中的行高亮
-
-#### 输入
-
-```
     ```java {3}
     public class HelloWorld {
         public static void main(String[] args) {
@@ -372,6 +348,7 @@ public class HelloWorld {
     }
 }
 ```
+
 
 ### 行号
 

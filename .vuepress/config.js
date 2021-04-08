@@ -23,7 +23,7 @@ module.exports = {
         sidebar: require('./config/sidebar')
     },
     markdown: {
-        lineNumbers: false,
+        lineNumbers: true,
         anchor: {permalink: false},
         toc: {includeLevel: [2, 3]},
         plugins: ['task-lists']

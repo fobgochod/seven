@@ -1,6 +1,12 @@
 module.exports = [
-    {text: '主页', link: '/'},
     {text: '目录', link: '/summary'},
+    {
+        text: '阅读', items: [
+            {text: 'OnJava8', link: 'https://lingcoder.gitee.io/onjava8/#/sidebar'},
+            {text: 'MyBatis', link: 'https://mybatis.org/mybatis-3/zh/index.html'},
+            {text: '软件架构探索', link: 'https://icyfenix.cn'},
+        ]
+    },
     {
         text: '友情链接',
         items: [
@@ -16,13 +22,6 @@ module.exports = [
                     {text: '软件架构探索', link: 'https://icyfenix.cn'},
                     {text: 'MyBatis-Plus', link: 'https://baomidou.com'},
                     {text: 'Java 全栈知识体系', link: 'https://www.pdai.tech'}
-                ]
-            },
-            {
-                text: '阅读', items: [
-                    {text: 'OnJava8', link: 'https://lingcoder.gitee.io/onjava8/#/sidebar'},
-                    {text: 'MyBatis', link: 'https://mybatis.org/mybatis-3/zh/index.html'},
-                    {text: '软件架构探索：The Fenix Project', link: 'https://icyfenix.cn'},
                 ]
             },
             {
