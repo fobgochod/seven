@@ -5,11 +5,9 @@ module.exports = {
     head: [
         ['link', {rel: 'shortcut icon', type: "image/x-icon", href: `/favicon.ico`}],
     ],
-    locales: {
-        "/": {
-            lang: 'zh-CN',
-        }
-    },
+    host: '0.0.0.0',
+    port: 8080,
+    dest: 'dist',
     themeConfig: {
         logo: '/images/logo.png',
         nextLinks: true,

@@ -9,9 +9,9 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/introduction/about-me',
-            '/introduction/about-the-project',
-            '/introduction/guide/quick-start'
+            '/zh/introduction/about-me',
+            '/zh/introduction/about-the-project',
+            '/zh/introduction/guide/quick-start'
         ]
     },
     {
@@ -19,10 +19,10 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/frontend/npm',
-            '/frontend/yarn',
-            '/frontend/vuepress',
-            '/frontend/gitbook',
+            '/zh/frontend/npm',
+            '/zh/frontend/yarn',
+            '/zh/frontend/vuepress',
+            '/zh/frontend/gitbook',
         ]
     },
     {
@@ -30,8 +30,8 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/backend/redis',
-            '/backend/nginx',
+            '/zh/backend/redis',
+            '/zh/backend/nginx',
         ]
     },
     {
@@ -39,57 +39,81 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/os/linux',
-            '/os/windows',
-            '/os/docker',
-            '/os/nous'
+            '/zh/os/linux',
+            '/zh/os/windows',
+            '/zh/os/docker',
+            '/zh/os/nous'
         ]
     },
     {
         title: '学习中 📚',
-        path: '/mashibing/',
+        path: '/zh/mashibing/',
         collapsable: true,
         sidebarDepth: 2,
         children: [
             {
-                title: 'JUC',
-                path: '/mashibing/juc/',
+                title: 'SysIO',
+                path: '/zh/mashibing/sysio/',
                 collapsable: false,
                 sidebarDepth: 2,
                 children: [
-                    '/mashibing/juc/thread1',
-                    '/mashibing/juc/thread2',
-                    '/mashibing/juc/thread3',
-                    '/mashibing/juc/thread4',
-                    '/mashibing/juc/thread5',
-                    '/mashibing/juc/thread6',
-                    '/mashibing/juc/thread7',
-                    '/mashibing/juc/thread8',
-                    '/mashibing/juc/thread9',
+                    '/zh/mashibing/sysio/sysio1',
+                    '/zh/mashibing/sysio/sysio2',
+                    '/zh/mashibing/sysio/sysio3',
+                    '/zh/mashibing/sysio/sysio4',
+                    '/zh/mashibing/sysio/sysio5',
+                    '/zh/mashibing/sysio/sysio6',
+                ]
+            },
+            {
+                title: 'JUC',
+                path: '/zh/mashibing/juc/',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/zh/mashibing/juc/thread1',
+                    '/zh/mashibing/juc/thread2',
+                    '/zh/mashibing/juc/thread3',
+                    '/zh/mashibing/juc/thread4',
+                    '/zh/mashibing/juc/thread5',
+                    '/zh/mashibing/juc/thread6',
+                    '/zh/mashibing/juc/thread7',
+                    '/zh/mashibing/juc/thread8',
+                    '/zh/mashibing/juc/thread9',
                 ]
             },
             {
                 title: 'JVM',
-                path: '/mashibing/jvm/',
+                path: '/zh/mashibing/jvm/',
                 collapsable: false,
                 sidebarDepth: 2,
                 children: [
-                    '/mashibing/jvm/jvm1',
-                    '/mashibing/jvm/jvm2',
-                    '/mashibing/jvm/jvm3'
+                    '/zh/mashibing/jvm/jvm1',
+                    '/zh/mashibing/jvm/jvm2',
+                    '/zh/mashibing/jvm/jvm3'
                 ]
             },
             {
                 title: 'MySQL',
-                path: '/mashibing/mysql/',
+                path: '/zh/mashibing/mysql/',
                 collapsable: false,
                 sidebarDepth: 2,
                 children: [
-                    '/mashibing/mysql/data',
-                    '/mashibing/mysql/mysql1',
-                    '/mashibing/mysql/mysql2',
-                    '/mashibing/mysql/mysql3',
-                    '/mashibing/mysql/mysql4'
+                    '/zh/mashibing/mysql/data',
+                    '/zh/mashibing/mysql/mysql1',
+                    '/zh/mashibing/mysql/mysql2',
+                    '/zh/mashibing/mysql/mysql3',
+                    '/zh/mashibing/mysql/mysql4'
+                ]
+            },
+            {
+                title: 'Redis',
+                path: '/zh/mashibing/redis/',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/zh/mashibing/redis/redis1',
+                    '/zh/mashibing/redis/redis8'
                 ]
             }
         ]
@@ -99,8 +123,8 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/book/On-Java-8',
-            '/book/Understanding-the-JVM',
+            '/zh/book/On-Java-8',
+            '/zh/book/Understanding-the-JVM',
         ]
     },
     {
@@ -108,7 +132,7 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/appendix/markdown',
+            '/zh/appendix/markdown',
         ]
     }
 ]
