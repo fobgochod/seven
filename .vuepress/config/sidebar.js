@@ -143,8 +143,10 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/zh/book/On-Java-8',
-            '/zh/book/Understanding-the-JVM',
+            '/zh/book/this-is-why',
+            '/zh/book/blog',
+            '/zh/book/on-java-8',
+            '/zh/book/understanding-the-jvm',
         ]
     },
     {

@@ -2,9 +2,12 @@ module.exports = [
     {text: '目录', link: '/summary'},
     {
         text: '阅读', items: [
-            {text: 'OnJava8', link: 'https://lingcoder.gitee.io/onjava8/#/sidebar'},
+            {text: 'Why技术', link: '/zh/book/this-is-why'},
+            {text: '美团技术团队', link: 'https://tech.meituan.com'},
+            {text: 'Idea Buffer', link: 'http://www.ideabuffer.cn'},
             {text: 'MyBatis', link: 'https://mybatis.org/mybatis-3/zh/index.html'},
             {text: '软件架构探索', link: 'https://icyfenix.cn'},
+            {text: 'OnJava8', link: 'https://lingcoder.github.io/OnJava8/#/sidebar'},
         ]
     },
     {

@@ -287,12 +287,12 @@ ll
 lsof -op $$
 
 # 重定向：不是命令，是机制
-输入
-输出
-<
->
+输入：<
+输出：>
 
+# ls标准输出 重定向到 ~/ls.out文件
 ls ./ 1> ~/ls.out
+# cat标准输入来自 ooxx.txt 标准输入 重定向到 cat.out
 cat 0< ooxx.txt 1> cat.out
 
 
@@ -364,7 +364,7 @@ exit
 [root@seven ~]# 
 
 
-# export
+# 变量 export
 [root@seven ~]# x=100
 [root@seven ~]# echo $x
 100
