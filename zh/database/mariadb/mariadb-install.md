@@ -26,7 +26,7 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
 
-```shell
+```sh
 # 中国科学技术大学
 [mariadb]
 name = MariaDB

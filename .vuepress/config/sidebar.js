@@ -51,6 +51,16 @@ module.exports = [
                     '/zh/database/redis/redis-install-windows',
                     '/zh/database/redis/redis-commands',
                 ]
+            },
+            {
+                title: 'MongoDB',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/zh/database/mongodb/mongodb-install',
+                    '/zh/database/mongodb/mongodb-commands',
+                    '/zh/database/mongodb/mongodb-dump',
+                ]
             }
         ]
     },
