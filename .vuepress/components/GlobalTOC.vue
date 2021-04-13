@@ -20,7 +20,7 @@
                     </a>
                     <div class="not-print" style="display: inline-block">
                         <badge type="error" v-if="checkUpdate(page)">
-                            {{page.update === 0 ? '当天更新': page.update+'天前更新'}}
+                            {{page.update === 0 ? '当天更新' : page.update + '天前更新'}}
                         </badge>
                     </div>
                     <span class="words">{{page.words}}</span>
@@ -29,7 +29,8 @@
                     {{page.title}}
                     <span class="words">{{page.words}}</span>
                 </span>
-                <GlobalTOC v-if="showDays === undefined" :pages="page.children" :level="level + 1" :showDays="updateDays"/>
+                <GlobalTOC v-if="showDays === undefined" :pages="page.children" :level="level + 1"
+                           :showDays="updateDays"/>
                 <GlobalTOC v-else :pages="page.children" :level="level + 1" :showDays="showDays"/>
             </li>
         </ol>
@@ -37,105 +38,105 @@
 </template>
 
 <script>
-    import moment from 'moment'
-    import {resolvePage} from '@parent-theme/util'
+import moment from 'moment'
+import {resolvePage} from '@parent-theme/util'
 
-    export default {
-        name: "GlobalTOC",
-        data() {
-            return {
-                updateDays: 0,
-                items: [],
-                information: []
-            }
-        },
-        props: ['pages', 'level', 'showDays'],
-        created: function () {
-            if (this.pages) {
-                let origin = (this.pages === '/' ? this.$themeConfig.sidebar : this.pages);
-                this.items = origin.map(item => {
-                    let page
-                    if (item.path) {
-                        page = resolvePage(this.$site.pages, item.path, this.$route.path)
-                    } else if (typeof (item) === 'string') {
-                        page = resolvePage(this.$site.pages, item, this.$route.path)
-                    } else {
-                        page = item;
-                    }
-                    page.children = item.children
-                    return page;
-                })
-                this.information = this.items.map(item => {
-                    return {
-                        title: this.getTitle(item),
-                        words: this.getWords(item),
-                        links: this.getLinks(item),
-                        update: this.getUpdate(item),
-                        lastUpdated: item.lastUpdated,
-                        children: item.children
-                    }
-                })
-            }
-        },
-        methods: {
-            checkUpdate: function (page) {
-                return page.update <= Math.max(this.updateDays, this.showDays);
-            },
-            getTitle: function (page) {
-                try {
-                    return page.title.replace('✔️ ', '')
-                } catch (e) {
-                    return "标题错误"
-                }
-            },
-            getWords: function (page) {
-                if (page && page.readingTime) {
-                    return `${page.readingTime.words.toLocaleString()} 字　`
+export default {
+    name: "GlobalTOC",
+    data() {
+        return {
+            updateDays: 0,
+            items: [],
+            information: []
+        }
+    },
+    props: ['pages', 'level', 'showDays'],
+    created: function () {
+        if (this.pages) {
+            let origin = (this.pages === '/' ? this.$themeConfig.sidebar : this.pages);
+            this.items = origin.map(item => {
+                let page
+                if (item.path) {
+                    page = resolvePage(this.$site.pages, item.path, this.$route.path)
+                } else if (typeof (item) === 'string') {
+                    page = resolvePage(this.$site.pages, item, this.$route.path)
                 } else {
-                    return ""
+                    page = item;
                 }
-            },
-            getLinks: function (page) {
-                return (page.readingTime && page.readingTime.words > 100) ? page.path : null
-            },
-            getUpdate: function (page) {
-                let lastDay = new moment(page.lastUpdated, 'YYYY-MM-DD HH:mm:ss');
-                return Math.floor(-1 * moment.duration(lastDay.diff(new Date())).asDays())
+                page.children = item.children
+                return page;
+            })
+            this.information = this.items.map(item => {
+                return {
+                    title: this.getTitle(item),
+                    words: this.getWords(item),
+                    links: this.getLinks(item),
+                    update: this.getUpdate(item),
+                    lastUpdated: item.lastUpdated,
+                    children: item.children
+                }
+            })
+        }
+    },
+    methods: {
+        checkUpdate: function (page) {
+            return page.update <= Math.max(this.updateDays, this.showDays);
+        },
+        getTitle: function (page) {
+            try {
+                return page.title.replace('✔️ ', '')
+            } catch (e) {
+                return "标题错误"
             }
+        },
+        getWords: function (page) {
+            if (page && page.readingTime) {
+                return `${page.readingTime.words.toLocaleString()} 字　`
+            } else {
+                return ""
+            }
+        },
+        getLinks: function (page) {
+            return (page.readingTime && page.readingTime.words > 100) ? '/seven' + page.path : null
+        },
+        getUpdate: function (page) {
+            let lastDay = new moment(page.lastUpdated, 'YYYY-MM-DD HH:mm:ss');
+            return Math.floor(-1 * moment.duration(lastDay.diff(new Date())).asDays())
         }
     }
+}
 </script>
 
 <style scoped>
-    ol {
-        padding: 0 0 0 20px;
-        margin: 0;
-        list-style: none;
-        counter-reset: a;
-    }
+ol {
+    padding: 0 0 0 20px;
+    margin: 0;
+    list-style: none;
+    counter-reset: a;
+}
 
-    li:before {
-        counter-increment: a;
-        content: counters(a, ".") ". ";
-        line-height: 35px;
-    }
+li:before {
+    counter-increment: a;
+    content: counters(a, ".") ". ";
+    line-height: 35px;
+}
 
-    .words {
-        font-size: 14px;
-        color: #999;
-        float: right;
-    }
+.words {
+    font-size: 14px;
+    color: #999;
+    float: right;
+}
 
-    .level0 {
-        font-size: 17px;
-        line-height: 44px;
-        font-weight: bold;
-    }
+.level0 {
+    font-size: 17px;
+    line-height: 44px;
+    font-weight: bold;
+}
 
-    .updateInfo {
-        text-align: right;
-        margin: 0 10px 20px 0;
-        color: #666;
-        font-size: 14px;
-    }
+.updateInfo {
+    text-align: right;
+    margin: 0 10px 20px 0;
+    color: #666;
+    font-size: 14px;
+}
 </style>

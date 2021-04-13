@@ -5,6 +5,7 @@
 [The MongoDB Database Tools Documentation](https://docs.mongodb.com/database-tools)
 
 ## Sample Data
+
 [Import Data into MongoDB¶](https://docs.mongodb.com/guides/server/import/#procedure)
 
 inventory.crud.json
@@ -44,7 +45,6 @@ mongodump --db=test --out=/DAP/DB/MongoDB/
 mongodump --db=test --collection=emp --out=/DAP/DB/MongoDB/
 ```
 
-
 ## 恢复
 
 ```sh
@@ -56,4 +56,23 @@ mongorestore --nsInclude=test.emp /DAP/DB/MongoDB/
 
 # 通过json文件恢复数据到指定数据库、指定表
 mongorestore --db=testStore --collection=empStore /DAP/DB/MongoDB/test/emp.bson
+```
+
+## FAQ
+
+```sh
+# 阿里云MongoDB快照恢复数据
+
+# 1. 删除dbpath目录下的mongod.lock
+rm -f /var/lib/mongo/mongod.lock
+# 2. 将data目录下所有文件授权给当前用户 root忽略， 
+chown -R user:user
+# 3. 清除log下目录
+rm -rf /var/log/mongodb/*
+# 4. 修复数据
+./mongod --repair --dbpath /var/lib/mongo/
+# 5. 按配置启动服务端
+./mongod --config mongodb.config
+6. 启动客户端
+mongo
 ```

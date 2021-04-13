@@ -16,6 +16,7 @@
 - [[60]笑了，面试官问我知不知道异步编程的Future。](https://mp.weixin.qq.com/s/dhJ78uzAgIGchErw-5VL3A)
 - [[61]呵呵，面试官问我知不知道CompletionService？](https://mp.weixin.qq.com/s/pvcfiT_3OOHauX9sTQ7VMA)
 - [[66]关于多线程中抛异常的这个面试题我再说最后一次！](https://mp.weixin.qq.com/s/aOlScg5sfQ4JvHzcRFqeyQ)
+- [[98]面试官一个线程池问题把我问懵逼了。](https://mp.weixin.qq.com/s/1-h5AHhJYin9c9G_ozdJqQ)
 
 ## Redis
 
@@ -184,3 +185,4 @@
 - [[96]知乎的一次29.7元的咨询。](https://mp.weixin.qq.com/s/eNm4ISnnIN5HUI9_VHKtKQ)
 - [[XX]哭了，假期好像啥都没干，就要结束了？！](https://mp.weixin.qq.com/s/_n_bnIBcjcCA7uq4ZlU5KQ)  
 - [[97]当我看技术文章的时候，我在想什么？](https://mp.weixin.qq.com/s/6qe3_a8X9bTJemF7NwJYmQ)
+- [[98]面试官一个线程池问题把我问懵逼了。](https://mp.weixin.qq.com/s/1-h5AHhJYin9c9G_ozdJqQ)
