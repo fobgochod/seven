@@ -9,7 +9,7 @@ module.exports = {
     port: 8080,
     dest: 'dist',
     themeConfig: {
-        logo: '/book.png',
+        logo: '/images/logo/book.png',
         nextLinks: true,
         prevLinks: true,
         smoothScroll: true,
