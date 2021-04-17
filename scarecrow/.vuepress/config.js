@@ -3,13 +3,13 @@ module.exports = {
     title: 'ScareCrow',
     description: '稻草人的笔记',
     head: [
-        ['link', {rel: 'shortcut icon', type: "image/x-icon", href: `favicon.ico`}],
+        ['link', {rel: 'shortcut icon', type: "image/x-icon", href: `/favicon.ico`}],
     ],
     host: '0.0.0.0',
     port: 8080,
     dest: 'dist',
     themeConfig: {
-        logo: 'book.png',
+        logo: '/book.png',
         nextLinks: true,
         prevLinks: true,
         smoothScroll: true,

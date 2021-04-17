@@ -1,28 +1,31 @@
 {
-  "name": "seven",
-  "version": "1.0.0",
-  "description": "Note taking",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vuepress dev scarecrow",
-    "build": "vuepress build scarecrow",
-    "deploy": "bash deploy.sh"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fobgochod/seven.git"
-  },
-  "keywords": [],
-  "author": "fobgochod@gmail.com",
-  "license": "ISC",
-  "devDependencies": {
-    "@vssue/api-github-v4": "^1.4.0",
-    "@vssue/vuepress-plugin-vssue": "^1.4.6",
-    "@vuepress/plugin-back-to-top": "^1.5.2",
-    "markdown-it-task-lists": "^2.1.1",
-    "moment": "^2.27.0",
-    "vuepress": "^1.4.1",
-    "vuepress-plugin-nuggets-style-copy": "^1.0.3"
-  }
+    "name": "scarecrow",
+    "version": "1.0.0",
+    "author": "fobgochod@gmail.com",
+    "description": "Scare Crow",
+    "keywords": [],
+    "main": "index.js",
+    "license": "MIT",
+    "directories": {
+        "doc": "scarecrow"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "vuepress dev scarecrow",
+        "build": "vuepress build scarecrow",
+        "deploy": "bash deploy.sh"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fobgochod/fobgochod.git"
+    },
+    "devDependencies": {
+        "@vssue/api-github-v4": "^1.4.0",
+        "@vssue/vuepress-plugin-vssue": "^1.4.6",
+        "@vuepress/plugin-back-to-top": "^1.5.2",
+        "markdown-it-task-lists": "^2.1.1",
+        "moment": "^2.27.0",
+        "vuepress": "^1.4.1",
+        "vuepress-plugin-nuggets-style-copy": "^1.0.3"
+    }
 }
