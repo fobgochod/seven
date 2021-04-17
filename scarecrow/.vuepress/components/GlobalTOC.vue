@@ -97,7 +97,7 @@ export default {
             }
         },
         getLinks: function (page) {
-            return (page.readingTime && page.readingTime.words > 100) ? '/seven' + page.path : null
+            return (page.readingTime && page.readingTime.words > 100) ? '/fobgochod' + page.path : null
         },
         getUpdate: function (page) {
             let lastDay = new moment(page.lastUpdated, 'YYYY-MM-DD HH:mm:ss');
