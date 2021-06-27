@@ -1,6 +1,6 @@
 module.exports = {
     base: '/fobgochod/',
-    title: 'ScareCrow',
+    title: 'Scarecrow',
     description: '稻草人的笔记',
     head: [
         ['link', {rel: 'shortcut icon', type: "image/x-icon", href: `/favicon.ico`}],

@@ -25,7 +25,16 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/zh/backend/nginx',
+            {
+                title: 'Nginx',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/zh/backend/nginx/nginx-install',
+                    '/zh/backend/nginx/nginx-conf',
+                    '/zh/backend/nginx/nginx-commands',
+                ]
+            },
         ]
     },
     {
@@ -71,7 +80,16 @@ module.exports = [
         children: [
             '/zh/os/linux',
             '/zh/os/windows',
-            '/zh/os/docker',
+            {
+                title: 'Docker',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/zh/os/docker/docker-install',
+                    '/zh/os/docker/docker-commands',
+                    '/zh/os/docker/docker-maven-plugin',
+                ]
+            },
             '/zh/os/nous'
         ]
     },
@@ -165,6 +183,7 @@ module.exports = [
         sidebarDepth: 2,
         children: [
             '/zh/appendix/markdown',
+            '/zh/appendix/git',
         ]
     }
 ]

@@ -1,8 +1,127 @@
 # Install
 
-## YUM安装
+## 文档
 
->参考：[https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat)
+- [https://www.mongodb.com/try/download/community?tck=docs_server](https://www.mongodb.com/try/download/community?tck=docs_server)
+
+## Linux
+
+> 目录结构
+
+```
+/
+├── opt
+│   ├── install
+│   │   └── mongodb
+│   │       ├── bin
+│   │       ├── data
+│   │       ├── etc
+│   │       │   └── mongod.conf
+│   │       └── logs
+│   └── package
+│       └── mongodb
+│           ├── mongodb-linux-x86_64-rhel80-4.4.6
+│           └── mongodb-linux-x86_64-rhel80-4.4.6.tgz
+├── root(me)
+└── usr
+```
+
+### 源码安装
+
+> 参考：
+
+- [【【官网】】Install MongoDB Community Edition using .tgz Tarball](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat-tarball)
+
+> 安装
+
+```sh
+# 安装前准备
+mkdir -p /opt/{install/mongodb/{bin,data,etc,logs},package/mongodb}
+yum install libcurl openssl xz-libs
+# 下载
+cd /opt/package/mongodb
+wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel80-4.4.6.tgz
+# 解压
+tar -zxvf mongodb-linux-x86_64-rhel80-4.4.6.tgz
+cp ./mongodb-linux-x86_64-rhel80-4.4.6/bin/* /opt/install/mongodb/bin/
+# 添加conf文件
+vi /opt/install/mongodb/etc/mongod.conf
+```
+
+> mongod参数说明：[Options](https://docs.mongodb.com/manual/reference/program/mongod)  
+> MongoDB配置说明：[mongod.conf](https://docs.mongodb.com/manual/reference/configuration-options)
+
+```yaml
+# /opt/install/mongodb/etc/mongod.conf
+systemLog:
+  destination: file
+  logAppend: true
+  path: /opt/install/mongodb/logs/mongodb.log
+storage:
+  dbPath: /opt/install/mongodb/data
+  journal:
+    enabled: true
+  directoryPerDB: true
+processManagement:
+  fork: true
+  pidFilePath: /opt/install/mongodb/bin/mongod.pid
+  timeZoneInfo: /usr/share/zoneinfo
+net:
+  port: 27017
+  bindIp: 0.0.0.0
+setParameter:
+  enableLocalhostAuthBypass: false
+```
+
+```sh
+# 添加环境变量
+vi /etc/profile
+export MONGODB_HOME=/opt/install/mongodb
+export PATH=$PATH:${MONGODB_HOME}/bin
+# 使修改生效
+source /etc/profile
+# 查看Path
+echo $PATH
+```
+
+> 启动
+
+```sh
+# 启动服务
+mongod -f /opt/install/mongodb/etc/mongod.conf
+# 关闭服务
+mongod --shutdown -f /opt/install/mongodb/etc/mongod.conf
+# 或者
+pkill mongod
+# 或进入 mongo shell
+mongo
+db.version()
+use admin
+db.shutdownServer()
+```
+
+> 卸载
+
+```sh
+## 卸载
+sudo yum erase $(rpm -qa | grep mongodb-org)
+sudo rm -r /opt/package/mongodb
+```
+
+> 防火墙
+
+```sh
+firewall-cmd --permanent --zone=public --add-port=27017/tcp
+firewall-cmd --permanent --zone=public --remove-port=27017/tcp
+firewall-cmd --reload
+firewall-cmd --list-ports
+```
+
+### YUM安装
+
+> 参考：
+
+- [【官网】Install MongoDB Community Edition](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat)
 
 ```sh
 vi /etc/yum.repos.d/mongodb-org-4.4.repo
@@ -19,9 +138,9 @@ gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
 
 ```sh
 # 最新稳定版本
-sudo yum install -y mongodb-org
+yum install -y mongodb-org
 # 或者指定版本
-sudo yum install -y mongodb-org-4.4 mongodb-org-server-4.4 mongodb-org-shell-4.4 mongodb-org-mongos-4.4 mongodb-org-tools-4.4
+yum install -y mongodb-org-4.4 mongodb-org-server-4.4 mongodb-org-shell-4.4 mongodb-org-mongos-4.4 mongodb-org-tools-4.4
 ```
 
 ```sh
@@ -29,11 +148,11 @@ sudo yum install -y mongodb-org-4.4 mongodb-org-server-4.4 mongodb-org-shell-4.4
 vi /etc/mongod.conf 
 ```
 
->mongod参数说明：[Options](https://docs.mongodb.com/manual/reference/program/mongod)  
->MongoDB配置说明：[mongod.conf](https://docs.mongodb.com/manual/reference/configuration-options)
+> mongod参数说明：[Options](https://docs.mongodb.com/manual/reference/program/mongod)  
+> MongoDB配置说明：[mongod.conf](https://docs.mongodb.com/manual/reference/configuration-options)
 
-```sh {17}
-# mongod.conf
+```yaml {17}
+# /etc/mongod.conf
 
 # for documentation of all options, see:
 #   http://docs.mongodb.org/manual/reference/configuration-options/
@@ -65,18 +184,16 @@ net:
   bindIp: 0.0.0.0  # Enter 0.0.0.0,:: to bind to all IPv4 and IPv6 addresses or, alternatively, use the net.bindIpAll setting.
 ```
 
+> 启动
+
 ```sh
 # /usr/lib/systemd/system/mongod.service 
-
-sudo systemctl start mongod
-# Failed to start mongod.service: Unit mongod.service not found.
 sudo systemctl daemon-reload
-
-sudo systemctl status mongod
 sudo systemctl enable mongod
-sudo systemctl stop mongod
-sudo systemctl restart mongod
+sudo systemctl start mongod
 ```
+
+> 卸载
 
 ```sh
 # 卸载
@@ -84,83 +201,4 @@ sudo service mongod stop
 sudo yum erase $(rpm -qa | grep mongodb-org)
 sudo rm -r /var/log/mongodb
 sudo rm -r /var/lib/mongo
-```
-
-## 源码安装
-
->参考：[https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat-tarball](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat-tarball)
-
-```sh
-# 安装前准备
-sudo yum install cyrus-sasl cyrus-sasl-gssapi cyrus-sasl-plain krb5-libs libcurl net-snmp openldap openssl xz-libs
-# 下载
-wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-4.4.5.tgz
-# 解压
-tar -zxvf mongodb-linux-x86_64-rhel70-4.4.5.tgz
-cd mongodb-linux-x86_64-rhel70-4.4.5
-# 创建数据目录data和日志目录logs
-mkdir data logs
-# 添加conf文件
-vi bin/mongod.conf
-```
-
->mongod参数说明：[Options](https://docs.mongodb.com/manual/reference/program/mongod)  
->MongoDB配置说明：[mongod.conf](https://docs.mongodb.com/manual/reference/configuration-options) 
-
-```yaml
-systemLog:
-   destination: file
-   logAppend: true
-   path: /DAP/install/mongo/mongodb-linux-x86_64-rhel70-4.4.5/logs/mongodb.log
-storage:
-   dbPath: /DAP/install/mongo/mongodb-linux-x86_64-rhel70-4.4.5/data
-   journal:
-      enabled: true
-   directoryPerDB: true
-processManagement:
-   fork: true
-   pidFilePath: /DAP/install/mongo/mongodb-linux-x86_64-rhel70-4.4.5/bin/mongod.pid
-   timeZoneInfo: /usr/share/zoneinfo
-net:
-   port: 27017
-   bindIp: 0.0.0.0
-setParameter:
-   enableLocalhostAuthBypass: false
-```
-
-```sh
-# 添加环境变量
-vi /etc/profile
-export MONGODB_HOME=/DAP/install/mongo/mongodb-linux-x86_64-rhel70-4.4.5
-export PATH=$PATH:${MONGODB_HOME}/bin
-# 使修改生效
-source /etc/profile
-```
-
-```sh
-# 启动服务
-mongod -f /DAP/install/mongo/mongodb-linux-x86_64-rhel70-4.4.5/bin/mongod.conf
-# 关闭服务
-mongod --shutdown -f /DAP/install/mongo/mongodb-linux-x86_64-rhel70-4.4.5/bin/mongod.conf
-# 或者
-pkill mongod
-# 或进入 mongo shell
-mongo
-use admin
-db.shutdownServer()
-```
-
-```shell
-# 启动客户端
-mongo
-db.version()
-
-# 退出客户端
-quit()
-```
-
-```sh
-## 卸载
-sudo yum erase $(rpm -qa | grep mongodb-org)
-sudo rm -r /DAP/install/mongo
 ```

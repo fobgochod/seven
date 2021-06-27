@@ -1,8 +1,9 @@
 # Linux
 
->Linux命令大全：[http://man.linuxde.net](http://man.linuxde.net)
+> Linux命令大全：[http://man.linuxde.net](http://man.linuxde.net)
 
 ## 常用
+
 ```sh
 # 查看某一端口的占用情况
 lsof -i:8080
@@ -31,6 +32,7 @@ wget https://downloads.mariadb.org/interstitial/mariadb-10.3.9/source/mariadb-10
 ```
 
 ## 压测
+
 ```sh
 # 修改TIME_WAIT超时时间(建议小于30秒)
 vi /etc/sysctl.conf
@@ -54,6 +56,7 @@ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 ## 内存、磁盘
 
 #### 内存
+
 ```sh
 # CPU型号
 cat /proc/cpuinfo | grep 'model name' |uniq
@@ -76,6 +79,7 @@ w
 ```
 
 #### 磁盘
+
 ```sh
 # 显示当前系统未使用的和已使用的内存数目
 free -m
@@ -99,9 +103,10 @@ du -sh /var/lib/mysql/*
 
 ## Yum
 
->全称为 Yellow dog Updater, Modified 是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器
+> 全称为 Yellow dog Updater, Modified 是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器
 
 YUM的配置方式是基于分段配置的
+
 ```sh
 # 主配置文件：
 /etc/yum.conf
@@ -110,6 +115,7 @@ YUM的配置方式是基于分段配置的
 ```
 
 #### 说明
+
 - 若无@或不是install，则表示尚未安装
 - base，表示未安装，包位于base仓库中
 - updates，表示未安装，包位于updates仓库中
@@ -142,6 +148,7 @@ yum list recent
 ## lrzsz
 
 #### 文件传输
+
 - sz中的s意为send（发送），告诉客户端，我（服务器）要发送文件 send to cilent，就等同于客户端在下载。
 - rz中的r意为received（接收），告诉客户端，我（服务器）要接收文件 received by cilent，就等同于客户端在上传。
 
@@ -155,6 +162,7 @@ yum install -y lrzsz.x86_64
 ```
 
 #### 上传下载
+
 ```sh
 # 不覆盖原文件
 rz
@@ -170,6 +178,7 @@ sz filename1 filename2 …
 ## firewall-cmd
 
 #### 防火墙
+
 ```sh
 # 安装
 yum install -y firewalld
@@ -185,6 +194,7 @@ systemctl disable firewalld.service
 ```
 
 #### 常用命令
+
 ```sh
 # 查看版本
 firewall-cmd --version
@@ -211,26 +221,43 @@ firewall-cmd --panic-off
 firewall-cmd --query-panic
 ```
 
+```sh
+# 查看帮住
+man firewall-cmd | grep query-port
+# 列出支持的zone
+firewall-cmd --get-zones
+# 支持的服务
+firewall-cmd --get-services
+```
+
 #### 参数解释
-- –add-service #添加的服务
-- –zone #作用域
-- –add-port=80/tcp #添加端口，格式为：端口/通讯协议
+
 - –permanent #永久生效，没有此参数重启后失效
+- –zone #作用域
+- –add-service #添加的服务
+- –add-port=80/tcp #添加端口，格式为：端口/通讯协议
 
 #### 端口
+
 ```sh
-# 查看所有打开的端口
-firewall-cmd --zone=public --list-ports
+# 查看所有打开的端口 [--permanent] [--zone=zone] --list-ports
+firewall-cmd --list-ports
+firewall-cmd --permanent --list-ports
 # 开启端口-永久
-firewall-cmd --permanent --zone=public --add-port=8080-8081/tcp
-firewall-cmd --permanent --zone=public --add-port=5672/tcp
-firewall-cmd --reload 
+firewall-cmd --permanent --zone=public --add-port=3306/tcp
+firewall-cmd --permanent --zone=public --add-port=8080-8082/tcp 
 # 删除端口
-firewall-cmd  --permanent --zone= public --remove-port=80/tcp
+firewall-cmd --permanent --zone=public --remove-port=3306/tcp
+firewall-cmd --permanent --zone=public --remove-port=8080-8082/tcp
+# 重新载入配置
+firewall-cmd --reload 
 ```
 
 #### 服务
+
 ```sh
+# 查看所有打开的服务 [--permanent] [--zone=zone] --list-services
+firewall-cmd --list-services
 # 开启服务
 firewall-cmd --permanent --zone=public --add-service=http
 # 删除服务
@@ -247,25 +274,28 @@ firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" sourc
 firewall-cmd --permanent --zone=public --remove-rich-rule='rule family="ipv4" source address="192.168.0.4/24" service name="http" accept'
 ```
 
-
 ### Centos7以下版本
 
 1.开放8080端口
+
 ```sh
 /sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
 ```
 
 2.保存
+
 ```sh
 /etc/rc.d/init.d/iptables save
 ```
 
 3.查看打开的端口
+
 ```sh
 /etc/init.d/iptables status
 ```
 
-4.关闭防火墙 
+4.关闭防火墙
+
 ```sh
 # 永久性生效，重启后不会复原
 # 开启 
@@ -280,3 +310,16 @@ service iptables start
 service iptables stop
 ```
 
+```sh
+# 修改主机名
+hostname
+
+vi /etc/sysconfig/network
+NETWORKING=yes
+HOSTNAME=fobgochod
+
+reboot
+hostnamectl
+cat /etc/hostname
+cat /etc/hosts
+```

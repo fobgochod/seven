@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: logo.png
-heroText: Scare Crow
+heroText: Scarecrow
 tagline: 6+1=7
 actionText: 快速上手 →
 actionLink: /summary
