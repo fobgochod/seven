@@ -37,7 +37,7 @@
 ```sh
 # 安装前准备
 mkdir -p /opt/{install/mongodb/{bin,data,etc,logs},package/mongodb}
-yum install libcurl openssl xz-libs
+yum -y install libcurl openssl xz-libs
 # 下载
 cd /opt/package/mongodb
 wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel80-4.4.6.tgz
@@ -71,6 +71,9 @@ net:
   bindIp: 0.0.0.0
 setParameter:
   enableLocalhostAuthBypass: false
+# 登陆密码授权(enabled)
+security:
+  authorization: disabled
 ```
 
 ```sh
@@ -182,23 +185,27 @@ processManagement:
 net:
   port: 27017
   bindIp: 0.0.0.0  # Enter 0.0.0.0,:: to bind to all IPv4 and IPv6 addresses or, alternatively, use the net.bindIpAll setting.
+
+# 登陆密码授权(enabled)
+security:
+  authorization: disabled
 ```
 
 > 启动
 
 ```sh
 # /usr/lib/systemd/system/mongod.service 
-sudo systemctl daemon-reload
-sudo systemctl enable mongod
-sudo systemctl start mongod
+systemctl daemon-reload
+systemctl enable mongod
+systemctl start mongod
 ```
 
 > 卸载
 
 ```sh
 # 卸载
-sudo service mongod stop
-sudo yum erase $(rpm -qa | grep mongodb-org)
-sudo rm -r /var/log/mongodb
-sudo rm -r /var/lib/mongo
+systemctl stop mongod
+yum erase $(rpm -qa | grep mongodb-org)
+rm -r /var/log/mongodb
+rm -r /var/lib/mongo
 ```
