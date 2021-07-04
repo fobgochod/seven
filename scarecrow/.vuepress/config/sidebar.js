@@ -90,6 +90,15 @@ module.exports = [
                     '/zh/os/docker/docker-maven-plugin',
                 ]
             },
+            {
+                title: 'Kubernetes',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/zh/os/kubernetes/minikube-install',
+                    '/zh/os/kubernetes/minikube-commands',
+                ]
+            },
             '/zh/os/nous'
         ]
     },
