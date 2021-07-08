@@ -78,7 +78,16 @@ module.exports = [
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/zh/os/linux',
+            {
+                title: 'Linux',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/zh/os/linux/linux',
+                    '/zh/os/linux/vi',
+                    '/zh/os/linux/user-group',
+                ]
+            },
             '/zh/os/windows',
             {
                 title: 'Docker',
@@ -88,6 +97,7 @@ module.exports = [
                     '/zh/os/docker/docker-install',
                     '/zh/os/docker/docker-commands',
                     '/zh/os/docker/docker-maven-plugin',
+                    '/zh/os/docker/dockerfile',
                 ]
             },
             {
