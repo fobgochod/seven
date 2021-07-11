@@ -5,7 +5,7 @@
     "description": "Scarecrow",
     "keywords": [],
     "main": "index.js",
-    "license": "MIT",
+    "license": "Apache License 2.0",
     "directories": {
         "doc": "scarecrow"
     },
@@ -20,12 +20,12 @@
         "url": "git+https://github.com/fobgochod/fobgochod.git"
     },
     "devDependencies": {
-        "@vssue/api-github-v4": "^1.4.0",
-        "@vssue/vuepress-plugin-vssue": "^1.4.6",
+        "vuepress": "^1.4.1",
+        "moment": "^2.27.0",
         "@vuepress/plugin-back-to-top": "^1.5.2",
         "markdown-it-task-lists": "^2.1.1",
-        "moment": "^2.27.0",
-        "vuepress": "^1.4.1",
+        "@vssue/api-github-v4": "^1.4.0",
+        "@vssue/vuepress-plugin-vssue": "^1.4.6",
         "vuepress-plugin-nuggets-style-copy": "^1.0.3"
     }
 }
